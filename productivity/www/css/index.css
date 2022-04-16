@@ -1,0 +1,217 @@
+/* */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,500;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,900&display=swap");
+
+
+body {
+    height: 90vh;
+    font-family: "Montserrat", sans-serif;
+    background-image: linear-gradient(to top, #cea392  0%,   #d11609 100%);
+    background-attachment: fixed;
+    color: #000000;
+}
+
+h1{
+    font-weight: 900;
+    text-align: center;
+}
+
+input{
+    transition: 0.5s ease-in-out;
+    padding: 5px;
+    background: rgba(0, 0, 0, 0.11);
+    border: 5px;
+}
+
+.btn-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10%;
+    margin: 35px 0;
+}
+
+button{
+    padding: 15px;
+    border: none;
+    transition: 0.5s ease-in-out;
+    border-bottom: 5px;
+}
+
+label{
+    font-size: 20px;
+    padding: 10px;
+    color: #000000;
+}
+
+form{
+    height: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    max-width: 370px;
+    margin: 5px auto;
+}
+
+form button{
+    background: rgb(25, 67, 255);
+    width: 100%;
+    margin: 20px 0 10px;
+    color: rgb(0, 0, 0);
+}
+
+div button:hover{
+    cursor: pointer;
+}
+
+form button:hover{
+    cursor: pointer;
+    background: rgb(11, 39, 163);
+}
+
+.start{
+    background: rgb(48, 33, 253);
+    color: white;
+}
+
+.break{
+    background: rgb(0, 199, 116);
+    color: #000000;
+}
+
+.reset{
+    background: rgb(250, 69, 109);
+    color: #000000;
+}
+
+.pause{
+    background: rgb(253, 143, 17);
+    color: #000000;
+}
+
+.resume{
+    background: rgb(131, 10, 252);
+    color: rgb(0, 0, 0);
+}
+
+.clock{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.progress-ring{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.progress-ring__circle{
+    transition: 0.5s;
+    transform: rotate(-90deg);
+    transform-origin: 50% 50%;
+    stroke: rgb(51, 65, 255);
+}
+
+a:link, a:visited,  a:hover, a:active{
+    color: red;
+    text-decoration: none;
+}
+
+footer{
+    font-weight: 900;
+    position: fixed;
+    bottom: 4px;
+    text-align: center;
+    width: 80%;
+    margin: 20px auto;
+}
+
+.danger{
+    stroke: rgb(243, 17, 28);
+    animation: pulse 0.9s ease-in-out infinite;
+}
+
+@keyframes pulse{
+    0%,
+    100% {
+    transform: rotate(-90deg) scale(1);
+    }
+
+    50% {
+    transform: rotate(-90deg) scale(1.05);
+    }
+
+    75% {
+    transform: rotate(-90deg) scale(0.8);
+    }
+}
+
+@media screen and (min-width: 768px){
+    body{
+        display: grid;
+        font-size: 15px;
+        grid-template-areas:
+        "head head"
+        "clock form"
+        "btns ji";
+    }
+
+    .btn-group{
+        grid-area: btns;
+        justify-content: center;
+    }
+
+    button{
+        justify-content: center;
+        margin: none;
+        padding: 10px;
+    }
+
+    .clock{
+        grid-area: clock;
+        height: 100%;
+    }
+
+    h1{
+        grid-area: head;
+        align-self: center;
+        font-size: 40px;
+    }
+
+    form{
+        align-self: center;
+        justify-self: center;
+        grid-area: form;
+        width: 50%;
+        justify-content: space-around;
+    }
+
+    footer{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width: 375px){
+    form{
+        height: 40%;
+    }
+
+    h1{
+        grid-area: head;
+        font-size: 10px;
+    }
+
+    button{
+        padding: 10px;
+    }
+
+    footer{
+        position: static;
+    }
+}
